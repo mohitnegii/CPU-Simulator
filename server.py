@@ -17,12 +17,12 @@ CORS(app)  # Enable CORS for all routes
 @app.route('/')
 def home():
     """Serve index.html"""
-    return send_from_directory('templates', 'index.html')
+    return render_template('index.html')
 
 @app.route('/simulator')
 def simulator():
     """Serve simulator.html"""
-    return send_from_directory('templates', 'simulator.html')
+    return render_template('simulator.html')
 
 # -------------------------------
 # API ROUTES
