@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CPU Scheduling Algorithm Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="header">
+        <h1>CPU Scheduling Algorithm Simulator</h1>
+        <p>Visualize and analyze different CPU scheduling algorithms</p>
+    </div>
+
+    <div class="container">
+        <div class="input-section">
+            <h2>Process Information</h2>
+            <div class="table-container">
+                <table id="input-table">
+                    <thead>
+                        <tr>
+                            <th>Process ID</th>
+                            <th>Arrival Time</th>
+                            <th>Burst Time</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" class="pid" value="1" min="1"></td>
+                            <td><input type="number" class="arrival" value="0" min="0"></td>
+                            <td><input type="number" class="burst" value="3" min="1"></td>
+                            <td><button class="remove-btn">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="number" class="pid" value="2" min="1"></td>
+                            <td><input type="number" class="arrival" value="1" min="0"></td>
+                            <td><input type="number" class="burst" value="5" min="1"></td>
+                            <td><button class="remove-btn">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="number" class="pid" value="3" min="1"></td>
+                            <td><input type="number" class="arrival" value="2" min="0"></td>
+                            <td><input type="number" class="burst" value="2" min="1"></td>
+                            <td><button class="remove-btn">×</button></td>
+                        </tr>0
+                    </tbody>
+                </table>
+            </div>
+            <button id="add-process" class="action-btn">Add Process</button>
+        </div>
+
+        <div class="algorithm-section">
+            <h2>Algorithm Selection</h2>
+            <div class="algorithm-controls">
+                <select id="algorithm">
+                    <option value="fcfs">First Come First Served (FCFS)</option>
+                    <option value="sjf">Shortest Job First (SJF)</option>
+                    <option value="srtf">Shortest Remaining Time First (SRTF)</option>
+                    <option value="rr">Round Robin (RR)</option>
+                </select>
+                <div id="quantum-container">
+                    <label for="quantum">Time Quantum:</label>
+                    <input type="number" id="quantum" value="2" min="1">
+                </div>
+                <button id="calculate" class="action-btn primary">Calculate</button>
+                <button id="reset-btn" class="action-btn secondary">Reset All</button>
+            </div>
+            <div id="algorithm-info">
+                <h3>Algorithm Description</h3>
+                <div id="algorithm-description">
+                    First Come First Served (FCFS) is the simplest scheduling algorithm that executes processes in the order they arrive in the ready queue.
+                </div>
+            </div>
+        </div>
+
+        <div class="results-container hidden" id="results-section">
+            <h2>Simulation Results</h2>
+            
+            <div class="gantt-section">
+                <h3>Gantt Chart</h3>
+                <div id="gantt-chart"></div>
+                <div id="timeline-markers"></div>
+            </div>
+
+            <div class="metrics-section">
+                <h3>Process Metrics</h3>
+                <div class="table-container">
+                    <table id="result-table">
+                        <thead>
+                            <tr>
+                                <th>Process</th>
+                                <th>Arrival Time</th>
+                                <th>Burst Time</th>
+                                <th>Completion Time</th>
+                                <th>Turnaround Time</th>
+                                <th>Waiting Time</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="averages" class="summary-metrics"></div>
+            </div>
+
+            <div class="charts-section">
+                <h3>Time Distribution Charts</h3>
+                <div class="charts-container">
+                    <div class="chart-item">
+                        <h4>Waiting Time</h4>
+                        <div id="waiting-chart" class="chart"></div>
+                    </div>
+                    <div class="chart-item">
+                        <h4>Turnaround Time</h4>
+                        <div id="turnaround-chart" class="chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>CPU Scheduling Algorithm Simulator</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

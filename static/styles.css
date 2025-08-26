@@ -1,0 +1,330 @@
+/* Modern CSS with better visual design */
+:root {
+    --primary-color: #8b5cf6;      
+    --secondary-color: #1f2937;    
+    --accent-color: #06d6a0;       
+    --light-color: #f9fafb;        
+    --text-color: #111827;         
+    --border-color: #d1d5db;       
+    --success-color: #10b981;      
+    --idle-color: #9ca3af;         
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin: 1rem 0;
+}
+
+h4 {
+    margin-bottom: 0.5rem;
+}
+
+.input-section, .algorithm-section, .results-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: normal;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.02);
+}
+
+/* Form Controls */
+input, select {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+input[type="number"] {
+    width: 80px;
+    text-align: center;
+}
+
+.action-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+    margin-right: 0.5rem;
+}
+
+.action-btn:hover {
+    background-color: #2980b9;
+}
+
+.action-btn.primary {
+    background-color: var(--success-color);
+}
+
+.action-btn.primary:hover {
+    background-color: #27ae60;
+}
+
+.action-btn.secondary {
+    background-color: var(--accent-color);
+}
+
+.action-btn.secondary:hover {
+    background-color: #c0392b;
+}
+
+.remove-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    line-height: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Algorithm Section */
+.algorithm-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#quantum-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#quantum-container label {
+    white-space: nowrap;
+}
+
+#quantum-container input {
+    width: 60px;
+}
+
+#algorithm-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(52, 152, 219, 0.05);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Gantt Chart */
+.gantt-section {
+    margin-bottom: 2rem;
+}
+
+#gantt-chart {
+    display: flex;
+    position: relative;
+    margin: 1.5rem 0 0.5rem;
+    overflow-x: auto;
+    min-height: 60px;
+    background: rgba(0,0,0,0.03);
+    border-radius: 4px;
+}
+
+.gantt-block {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    margin-right: 1px;
+    min-width: 50px;
+    position: relative;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.gantt-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.gantt-block.idle {
+    background-color: var(--idle-color);
+}
+
+#timeline-markers {
+    display: flex;
+    position: relative;
+    font-size: 0.75rem;
+    color: #777;
+    padding-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.time-marker {
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+/* Charts Section */
+.charts-section {
+    margin-top: 2rem;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+.chart-item {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.chart {
+    margin-top: 1rem;
+    height: 300px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Summary Section */
+.summary-metrics {
+    background-color: rgba(46, 204, 113, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.metric-item {
+    padding: 0.5rem 1rem;
+}
+
+.metric-value {
+    font-size: 1.2rem;
+    color: var(--success-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .algorithm-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .charts-container {
+        flex-direction: column;
+    }
+    
+    input[type="number"] {
+        width: 60px;
+    }
+}
