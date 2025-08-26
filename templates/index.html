@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <head>
     <title>CPU Scheduling Simulator - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
     <div class="container">
@@ -15,7 +16,7 @@
                 <div class="hero-content" align="center">
                     <h2>Explore Scheduling Algorithms</h2>
                     <p>Interactive visualization of FCFS, SJF, Round Robin, and more</p>
-                    <a href="simulator.html" class="cta-button">Launch Simulator</a>
+                    <a href="{{ url_for('simulator') }}">Go to Simulator</a>
                 </div>
                 
             </div>

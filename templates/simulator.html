@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>CPU Scheduling Algorithm Simulator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -122,6 +122,6 @@
         <p>CPU Scheduling Algorithm Simulator</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
